@@ -10,6 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 :root {
   /* colors */
   --background-color: white;
@@ -22,6 +24,7 @@
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --playfair-font-family: 'Playfair Display', serif; /* Added Playfair Display font */
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -38,6 +41,8 @@
 
   /* nav height */
   --nav-height: 64px;
+
+
 }
 
 /* fallback fonts */
@@ -75,7 +80,7 @@ body {
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: var(--body-font-family);
+  font-family: var(--playfair-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
 }
@@ -106,7 +111,8 @@ h5,
 h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
-  font-family: var(--heading-font-family);
+  /* font-family: var(--heading-font-family); */
+  font-family: var(--playfair-font-family);
   font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
