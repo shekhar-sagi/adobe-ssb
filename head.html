@@ -1,4 +1,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <script src="/scripts/aem.js" type="module"></script>
 <script src="/scripts/scripts.js" type="module"></script>
-<link rel="stylesheet" href="/styles/styles.css"/>
+<link id="dynamic-stylesheet" rel="stylesheet" href="/styles/styles.css"/>
+
+<script>
+  // Apply serta.css if the URL contains "serta"
+  if (window.location.href.includes('beautyrest')) {
+    document.getElementById('dynamic-stylesheet').href = '/styles/beautyrest.css';
+  }else if (window.location.href.includes('serta')) {
+    document.getElementById('dynamic-stylesheet').href = '/styles/serta.css';
+  } else if (window.location.href.includes('turfandneedle')) {
+    document.getElementById('dynamic-stylesheet').href = '/styles/tfn.css';
+  }
+</script>

@@ -1,0 +1,9 @@
+:root {
+    --lighter-brand-color: #F9F9F9;
+    --light-brand-color: #D2D6DB;
+    --brand-color: #6C737F;
+    --dark-brand-color: #384250;
+    --darker-brand-color: #111927;
+    --brand-btn-color: #297BB0;
+    --background-gradient: linear-gradient(to bottom, #465565, #000000);
+}

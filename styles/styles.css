@@ -14,13 +14,23 @@
 
 :root {
   /* colors */
+
   --background-color: white;
-  --background-black: black;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
+  --white-color: white;
+  --black-color: #000;
+  --lighter-grey-color:#F5F5F5;
+  --light-grey-color:#D5D7DA;
+  --grey-color:#717680;
+  --medium-grey-color:#414651;
+  --dark-grey-color:#181D27;
+  --error-color:#F04438;
+  --warning-color:#F79009;
+  --success-color:#17B26A;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -112,6 +122,7 @@ h5,
 h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
+
   /* font-family: var(--heading-font-family); */
   font-family: var(--playfair-font-family);
   font-weight: 600;
