@@ -51,7 +51,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    width: 600px;
+    width: 300px;
     position: relative;
     height: max-content;
   }
@@ -65,7 +65,7 @@
   }
   
   .utility-banner .carousel-item {
-    min-width: 600px;
+    min-width: 300px;
     margin-right: 20px;
     display: flex;
     justify-content: center;
@@ -103,4 +103,24 @@
 
   button.carousel-button img {
     width: 24px;
+  }
+
+  .utility-banner .utility-banner-col-0,
+  .utility-banner .utility-banner-col-2 {
+    display: none;
+  }
+
+  @media (min-width: 1024px){
+    .utility-banner .utility-banner-col-0,
+    .utility-banner .utility-banner-col-2 {
+      display: block;
+    }
+
+    .utility-banner .carousel {
+      width: 600px;
+    }
+
+    .utility-banner .carousel-item {
+      min-width: 600px;
+    }
   }
