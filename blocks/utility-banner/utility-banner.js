@@ -7,13 +7,13 @@ function decorateCarousel(element){
   const prevButton = document.createElement('button');
   prevButton.classList.add('carousel-button', 'prev');
   prevButton.setAttribute('aria-label','previous');
-  prevButton.innerHTML = '<img data-icon-name="arrow-back" src="/icons/arrow-back.svg" alt="previous" loading="eager" width="24" height="24">';
+  prevButton.innerHTML = '<img data-icon-name="arrow-back" src="/icons/arrow-back.svg" alt="previous" loading="eager">';
   
 
   const nextButton = document.createElement('button');
   nextButton.classList.add('carousel-button','next');
   nextButton.setAttribute('aria-label','next');
-  nextButton.innerHTML = '<img data-icon-name="arrow-forward" src="/icons/arrow-forward.svg" alt="next" loading="eager" width="24" height="24">';
+  nextButton.innerHTML = '<img data-icon-name="arrow-forward" src="/icons/arrow-forward.svg" alt="next" loading="eager">';
 
   const ulElement = element.querySelector('ul');
   ulElement?.classList.add('carousel-list');
