@@ -1,0 +1,4 @@
+ /* styles mine */
+ .carousel-slide-content p:first-child {
+    color: var(--light-brand-color);
+  }
