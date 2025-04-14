@@ -1,3 +1,4 @@
+@import url('../../styles/beautyrest.css');
 .utility-banner > div{
     display: flex;
     background-color: black;
@@ -112,6 +113,11 @@
   .utility-banner .utility-banner-col-0,
   .utility-banner .utility-banner-col-2 {
     display: none;
+  }
+
+  .utility-banner .utility-banner-col-0 a:hover,
+  .utility-banner .utility-banner-col-2 a:hover {
+    color: var(--light-brand-color);
   }
 
   .utility-banner .carousel-item > a{
