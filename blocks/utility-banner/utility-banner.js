@@ -1,4 +1,5 @@
 function decorateCarousel(element) {
+  console.log(element);
   element.classList.add('carousel');
   const prevButton = document.createElement('button');
   prevButton.classList.add('carousel-button', 'prev');
@@ -20,14 +21,19 @@ function decorateCarousel(element) {
   ulElement?.parentNode.append(prevButton);
   ulElement?.parentNode.append(nextButton);
 
-  const carousel = document.querySelector('.utility-banner-col-1');
-  const carouselItems = carousel.querySelectorAll('.carousel-item');
+  const carouselItems = element.querySelectorAll('.carousel-item');
   let currentIndex = 0;
 
   function updateCarousel() {
     const itemWidth = carouselItems[0].getBoundingClientRect().width;
-    const translateX = -currentIndex * (itemWidth + 35); // margin-right:20px, gap: 15px
-    carousel.querySelector('.carousel-list').style.transform = `translateX(${translateX}px)`;
+    const selectedCarouselItem = carouselItems[currentIndex];
+    const computedStyle = window.getComputedStyle(selectedCarouselItem);
+    const gap = parseInt(computedStyle.gap.replace('px','')) || 0;
+    const right_margin = parseInt(computedStyle.marginRight.replace('px','')) || 0;
+    console.log(gap,right_margin)
+
+    const translateX = -currentIndex * (itemWidth + gap + right_margin); // margin-right:20px, gap: 15px
+    element.querySelector('.carousel-list').style.transform = `translateX(${translateX}px)`;
 
     prevButton.disabled = currentIndex <= 0;
     nextButton.disabled = currentIndex >= carouselItems.length - 1;
@@ -66,7 +72,9 @@ export default async function decorate(block) {
     })
   })
 
-  const img = document.querySelector('.utility-banner .utility-banner-col-0 img');
+  const img = block.querySelector('.utility-banner .utility-banner-col-0 img');
+  
+  console.log(img);
     img.addEventListener('mouseover', () => {
       img.src = '/icons/location-lighter.svg';
     });
@@ -74,9 +82,9 @@ export default async function decorate(block) {
       img.src = '/icons/location-white.svg';
     });
 
-    const account_linkEl = document.querySelector('.utility-banner-col-2 ul');
+    const account_linkEl = block.querySelector('.utility-banner-col-2 ul');
   account_linkEl?.classList.add('hidden');
-  const accountEl = document.querySelector('.utility-banner-col-2 a');
+  const accountEl = block.querySelector('.utility-banner-col-2 a');
   
   // Show the dropdown when hovering over the account link
   accountEl.addEventListener('mouseover', () => {
