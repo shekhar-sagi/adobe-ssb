@@ -1,14 +1,9 @@
-
-
 function decorateCarousel(element) {
-  console.log(element);
   element.classList.add('carousel');
-
   const prevButton = document.createElement('button');
   prevButton.classList.add('carousel-button', 'prev');
   prevButton.setAttribute('aria-label', 'previous');
   prevButton.innerHTML = '<img data-icon-name="arrow-back" src="/icons/arrow-back.svg" alt="previous" loading="eager"/>';
-
 
   const nextButton = document.createElement('button');
   nextButton.classList.add('carousel-button', 'next');
@@ -27,12 +22,11 @@ function decorateCarousel(element) {
 
   const carousel = document.querySelector('.utility-banner-col-1');
   const carouselItems = carousel.querySelectorAll('.carousel-item');
-
   let currentIndex = 0;
 
   function updateCarousel() {
     const itemWidth = carouselItems[0].getBoundingClientRect().width;
-    const translateX = -currentIndex * (itemWidth + 35);
+    const translateX = -currentIndex * (itemWidth + 35); // margin-right:20px, gap: 15px
     carousel.querySelector('.carousel-list').style.transform = `translateX(${translateX}px)`;
 
     prevButton.disabled = currentIndex <= 0;
