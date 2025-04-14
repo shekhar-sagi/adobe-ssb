@@ -2,21 +2,21 @@
 @import url('/styles/styles.css');
 @import url("https://use.typekit.net/jbu5zhn.css");
 
-/* Beauty rest base Styles */
-@import url("/styles/beautyrest/_font.css");
-@import url("/styles/beautyrest/_variables.css");
-@import url("/styles/beautyrest/_typography.css");
-@import url("/styles/beautyrest/_colors.css");
+/* Tuft and needle Styles  DO NOT EDIT add styles in tfnbase.css */
+@import url("/styles/tfn/_colors.css");
+@import url("/styles/tfn/_variables.css");
+@import url("/styles/tfn/_typography.css");
+@import url("/styles/tfn/_font.css");
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: ff-meta-serif-web-pro, serif;
+    font-family: TiemposRegular, serif;
     color: var(--white-color);
     font-weight: 500;
     font-style: normal;
 }
 
 p, button, span, div {
-    font-family: ff-meta-serif-web-pro, serif;
+    font-family: ApercuRegular, sans-serif;
     color: var(--white-color);
     font-weight: 400;
     font-style: normal;
@@ -58,4 +58,7 @@ h5 {
     margin-bottom: 0.4rem;
 }
 
-/* beauty rest carousel style */
+ /* styles mine */
+ .carousel-slide-content p:first-child {
+    color: var(--light-brand-color);
+  }

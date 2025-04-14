@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "TiemposLight";
+    src: url("../fonts/TiemposHeadline-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: "TiemposRegular";
+    src: url("../fonts/TiemposHeadline-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "TiemposBold";
+    src: url("../fonts/TiemposHeadline-Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "TiemposMedium";
+    src: url("../fonts/TiemposHeadline-Medium.otf") format("opentype");
+}
+@font-face {
+    font-family: "ApercuLight";
+    src: url("../fonts/Apercu Light.otf") format("opentype");
+}
+@font-face {
+    font-family: "ApercuRegular";
+    src: url("../fonts/Apercu Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "ApercuBold";
+    src: url("../fonts/Apercu Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "ApercuMedium";
+    src: url("../fonts/Apercu Medium.otf") format("opentype");
+}
