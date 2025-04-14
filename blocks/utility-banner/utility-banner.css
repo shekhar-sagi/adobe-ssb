@@ -72,8 +72,8 @@
   }
   
   .utility-banner .carousel-item {
-    /* min-width: calc(100% - 12px); */
-    min-width: 280px;
+    min-width: calc(100% - 12px);
+    /* min-width: 280px; */
     margin-right: 20px;
     display: flex;
     justify-content: center;
