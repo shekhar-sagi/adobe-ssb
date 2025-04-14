@@ -14,9 +14,9 @@ function decorateCarousel(element) {
   const ulElement = element.querySelector('ul');
   ulElement?.classList.add('carousel-list');
 
-  [...element.querySelectorAll('ul > li')].forEach((item, i) => {
-    item.classList.add('carousel-item')
-  })
+  [...element.querySelectorAll('ul > li')].forEach((item) => {
+    item.classList.add('carousel-item');
+  });
 
   ulElement?.parentNode.append(prevButton);
   ulElement?.parentNode.append(nextButton);
@@ -28,11 +28,11 @@ function decorateCarousel(element) {
     const itemWidth = carouselItems[0].getBoundingClientRect().width;
     const selectedCarouselItem = carouselItems[currentIndex];
     const computedStyle = window.getComputedStyle(selectedCarouselItem);
-    const gap = parseInt(computedStyle.gap.replace('px','')) || 0;
-    const right_margin = parseInt(computedStyle.marginRight.replace('px','')) || 0;
-    console.log(gap,right_margin)
+    const gap = parseInt(computedStyle.gap.replace('px', ''), 10) || 0;
+    const rightMargin = parseInt(computedStyle.marginRight.replace('px', ''), 10) || 0;
+    console.log(gap,rightMargin)
 
-    const translateX = -currentIndex * (itemWidth + gap + right_margin); // margin-right:20px, gap: 15px
+    const translateX = -currentIndex * (itemWidth + gap + rightMargin); // margin-right:20px, gap: 15px
     element.querySelector('.carousel-list').style.transform = `translateX(${translateX}px)`;
 
     prevButton.disabled = currentIndex <= 0;
