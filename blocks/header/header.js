@@ -167,5 +167,7 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  // const utility_banner = block.querySelector('.utility-banner-container');
+  // block.prepend(utility_banner);
   // block.prepend(block.querySelector('.nav-banner'));
 }

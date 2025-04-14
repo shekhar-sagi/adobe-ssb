@@ -1,10 +1,5 @@
 @import url('../../styles/beautyrest.css');
-.utility-banner{
-  position: fixed;
-  top:0;
-  left: 0;
-  width: 100%;
-}
+
 .utility-banner > div{
     display: flex;
     background-color: black;
@@ -161,8 +156,7 @@
       border-top-width: 5px;
       border-top-style: solid;
       border-top-color: var(--brand-btn-color);
-      padding: 20px;
-        
+      padding: 20px; 
     }
 
     ul.hidden{
