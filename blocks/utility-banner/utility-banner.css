@@ -71,6 +71,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 16px;
   }
 
   .carousel-button {
@@ -113,6 +114,11 @@
     display: none;
   }
 
+  .utility-banner .carousel-item > a{
+    font-size: 12px;
+    text-decoration: underline;
+  }
+
   @media (width >= 1024px){
     .utility-banner .utility-banner-col-0,
     .utility-banner .utility-banner-col-2 {
@@ -126,7 +132,6 @@
 
     .utility-banner .carousel-item {
       min-width: 600px;
-      gap: 15px;
       flex-direction: row;
     }
   }
