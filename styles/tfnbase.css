@@ -1,10 +1,25 @@
-@import url('/styles/styles.css');
 
-/* Serta Simmons Styles */
+@import url('/styles/styles.css');
+@import url("https://use.typekit.net/jbu5zhn.css");
+
+/* Tuft and needle Styles */
+@import url("/styles/tfn/_colors.css");
+@import url("/styles/tfn/_variables.css");
+@import url("/styles/tfn/_typography.css");
+@import url("/styles/tfn/_font.css");
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: var(--playfair-font-family);
-    color: var(--dark-brand-color);
+    font-family: TiemposRegular, serif;
+    color: var(--white-color);
+    font-weight: 500;
+    font-style: normal;
+}
+
+p, button, span, div {
+    font-family: ApercuRegular, sans-serif;
+    color: var(--white-color);
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Typography for headings */
