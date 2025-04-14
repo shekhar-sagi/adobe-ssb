@@ -67,11 +67,40 @@ export default async function decorate(block) {
   })
 
   const img = document.querySelector('.utility-banner .utility-banner-col-0 img');
-  img.addEventListener('mouseover', () => {
-    img.src = '/icons/location-lighter.svg';
+    img.addEventListener('mouseover', () => {
+      img.src = '/icons/location-lighter.svg';
+    });
+    img.addEventListener('mouseout', () => {
+      img.src = '/icons/location-white.svg';
+    });
+
+    const account_linkEl = document.querySelector('.utility-banner-col-2 ul');
+  account_linkEl?.classList.add('hidden');
+  const accountEl = document.querySelector('.utility-banner-col-2 a');
+  
+  // Show the dropdown when hovering over the account link
+  accountEl.addEventListener('mouseover', () => {
+    account_linkEl.classList.remove('hidden');
   });
-  img.addEventListener('mouseout', () => {
-    img.src = '/icons/location-white.svg';
+  
+  // Hide the dropdown only if the mouse leaves both the account link and the dropdown
+  accountEl.addEventListener('mouseout', (event) => {
+    if (!account_linkEl.contains(event.relatedTarget)) {
+      console.log('i am inside');
+      account_linkEl.classList.add('hidden');
+    }
+  });
+  
+  // Keep the dropdown visible when hovering over it
+  account_linkEl.addEventListener('mouseover', () => {
+    account_linkEl.classList.remove('hidden');
+  });
+  
+  // Hide the dropdown when the mouse leaves the dropdown and does not return to the account link
+  account_linkEl.addEventListener('mouseout', (event) => {
+    if (!accountEl.contains(event.relatedTarget)) {
+      account_linkEl.classList.add('hidden');
+    }
   });
 
   if (block.classList.contains('carousel')) {

@@ -7,6 +7,15 @@
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
+    position: relative;
+  }
+
+  .utility-banner ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
   }
   
   .utility-banner-col-0,
@@ -22,11 +31,11 @@
   }
   
   .utility-banner-col-1 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 10px;
+    flex-direction: row;
+  }
+
+  .utility-banner-col-2 ul {
+    flex-direction: column;
   }
   
   .utility-banner-col-1 li {
@@ -43,10 +52,7 @@
     text-decoration: none;
   }
   
-  .utility-banner a:hover {
-    text-decoration: underline;
-  }
-
+  /* Carousel styling */
   .utility-banner .carousel {
     display: flex;
     align-items: center;
@@ -95,7 +101,7 @@
     right: 0;
     padding: 0;
   }
-   
+
   .carousel-button:hover,
   .carousel-button:focus,
   .carousel-button:active {
@@ -123,6 +129,36 @@
   .utility-banner .carousel-item > a{
     font-size: 12px;
     text-decoration: underline;
+  }
+
+  /* Account drop down styling */
+  .utility-banner .utility-banner-col-2 {
+    ul {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 200px;
+      background-color: var(--lighter-brand-color);
+      border: 2px solid black;
+      padding: 20px;
+        
+    }
+
+    ul.hidden{
+      display: none;
+    }
+
+    li.hidden{
+      display: none;
+    }
+    
+    li a{
+      color: blue;
+    }
+
+    li a:hover{
+      color: black;
+    }
   }
 
   @media (width >= 1024px){
