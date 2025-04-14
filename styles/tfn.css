@@ -2,7 +2,7 @@
 @import url('/styles/styles.css');
 @import url("https://use.typekit.net/jbu5zhn.css");
 
-/* Tuft and needle Styles */
+/* Tuft and needle Styles  DO NOT EDIT add styles in tfnbase.css*/
 @import url("/styles/tfn/_colors.css");
 @import url("/styles/tfn/_variables.css");
 @import url("/styles/tfn/_typography.css");
