@@ -2,7 +2,7 @@
 @import url('/styles/styles.css');
 @import url("https://use.typekit.net/jbu5zhn.css");
 
-/* Beauty rest base Styles DO NOT EDIT add style in beautyrestbase.css */
+/* Beauty rest base Styles */
 @import url("/styles/beautyrest/_font.css");
 @import url("/styles/beautyrest/_variables.css");
 @import url("/styles/beautyrest/_typography.css");
@@ -12,6 +12,13 @@ h1,h2,h3,h4,h5,h6 {
     font-family: ff-meta-serif-web-pro, serif;
     color: var(--white-color);
     font-weight: 500;
+    font-style: normal;
+}
+
+p, button, span, div {
+    font-family: ff-meta-serif-web-pro, serif;
+    color: var(--white-color);
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -50,3 +57,5 @@ h5 {
     line-height: 1.6;
     margin-bottom: 0.4rem;
 }
+
+/* beauty rest carousel style */
