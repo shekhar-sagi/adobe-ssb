@@ -86,7 +86,6 @@ export default async function decorate(block) {
   // Hide the dropdown only if the mouse leaves both the account link and the dropdown
   accountEl.addEventListener('mouseout', (event) => {
     if (!account_linkEl.contains(event.relatedTarget)) {
-      console.log('i am inside');
       account_linkEl.classList.add('hidden');
     }
   });

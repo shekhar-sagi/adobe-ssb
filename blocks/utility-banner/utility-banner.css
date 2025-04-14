@@ -133,13 +133,27 @@
 
   /* Account drop down styling */
   .utility-banner .utility-banner-col-2 {
+    p{
+      position: relative;
+      width: 100px;
+      padding-bottom: 20px;
+    }
+
+    p > a {
+        position: absolute;
+        right: 0;
+        padding-bottom: 25px;
+    }
+
     ul {
       position: absolute;
       top: 100%;
       right: 0;
       min-width: 200px;
       background-color: var(--lighter-brand-color);
-      border: 2px solid black;
+      border-top-width: 5px;
+      border-top-style: solid;
+      border-top-color: var(--brand-btn-color);
       padding: 20px;
         
     }
@@ -151,9 +165,10 @@
     li.hidden{
       display: none;
     }
-    
+
     li a{
-      color: blue;
+      color: var(--brand-btn-color);
+      font-weight: 600;
     }
 
     li a:hover{
