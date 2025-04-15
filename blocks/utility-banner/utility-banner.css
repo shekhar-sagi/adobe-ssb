@@ -196,6 +196,14 @@ button.carousel-button img {
   display: none;
 }
 
+.utility-banner.space-between .utility-banner-col-2 {
+  p {
+    position: relative;
+    width: 100px;
+    padding-bottom: 20px;
+  }
+}
+
 .utility-banner.bg-bluish-grey >div {
   background-color:	#536878;
 }
