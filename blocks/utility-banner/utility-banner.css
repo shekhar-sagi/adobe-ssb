@@ -123,13 +123,13 @@ button.carousel-button img {
   display: none;
 }
 
-.utility-banner.arrow-tag .utility-banner-col-0 a {
-  text-align: start;
-}
-
 .utility-banner .carousel-item>a {
   font-size: 12px;
   text-decoration: underline;
+}
+
+.utility-banner.text-turquoise a {
+  color: turquoise;
 }
 
 .utility-banner .utility-banner-col-2 p>a {
@@ -141,6 +141,10 @@ button.carousel-button img {
 .utility-banner .utility-banner-col-2 li a {
   color: var(--brand-btn-color);
   font-weight: 600;
+}
+
+.utility-banner.arrow-tag .utility-banner-col-0 a {
+  text-align: start;
 }
 
 .utility-banner.space-between .utility-banner-col-0 > ul a{
@@ -213,7 +217,6 @@ button.carousel-button img {
   background-color:	#536878;
 }
 
-.utility-banner.text-turquoise a,
 .utility-banner.text-turquoise li {
   color: turquoise;
 }
