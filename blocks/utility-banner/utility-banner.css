@@ -150,12 +150,6 @@
       padding-bottom: 20px;
     }
 
-    /* p > a {
-        position: absolute;
-        right: 0;
-        padding-bottom: 25px;
-    } */
-
     ul.hidden{
       display: none;
     }
@@ -163,11 +157,6 @@
     li.hidden{
       display: none;
     }
-
-    /* li a{
-      color: var(--brand-btn-color);
-      font-weight: 600;
-    } */
 
     li a:hover{
       color: black;
