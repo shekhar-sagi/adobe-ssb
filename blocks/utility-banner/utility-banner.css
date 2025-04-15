@@ -138,12 +138,16 @@ button.carousel-button img {
   font-weight: 600;
 }
 
+.utility-banner.space-between .utility-banner-col-0 > ul a{
+  text-align: start;
+}
+
 .utility-banner.space-around .utility-banner-col-0 a:hover,
 .utility-banner.space-around .utility-banner-col-2 a:hover {
   color: var(--light-brand-color);
 }
 
-.utility-banner .utility-banner-col-2 {
+.utility-banner.space-around .utility-banner-col-2 {
   p {
     position: relative;
     width: 100px;
@@ -183,10 +187,6 @@ button.carousel-button img {
   display: block;
 }
 
-.utility-banner.space-between .utility-banner-col-0 > ul a{
-  text-align: start;
-}
-
 .utility-banner.utility-banner.space-between .utility-banner-col-0 a:hover {
   text-decoration: underline;
 }
@@ -201,7 +201,6 @@ button.carousel-button img {
 }
 
 @media (width >=1024px) {
-
   .utility-banner .utility-banner-col-0,
   .utility-banner .utility-banner-col-2 {
     display: block;
