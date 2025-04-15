@@ -115,11 +115,16 @@
 
 button.carousel-button img {
   width: 24px;
+  height: 24px;
 }
 
 .utility-banner .utility-banner-col-0,
 .utility-banner .utility-banner-col-2 {
   display: none;
+}
+
+.utility-banner.arrow-tag .utility-banner-col-0 a {
+  text-align: start;
 }
 
 .utility-banner .carousel-item>a {
@@ -206,6 +211,11 @@ button.carousel-button img {
 
 .utility-banner.bg-bluish-grey >div {
   background-color:	#536878;
+}
+
+.utility-banner.text-turquoise a,
+.utility-banner.text-turquoise li {
+  color: turquoise;
 }
 
 @media (width >=1024px) {
