@@ -30,9 +30,8 @@ function decorateCarousel(element) {
     const computedStyle = window.getComputedStyle(selectedCarouselItem);
     const gap = parseInt(computedStyle.gap.replace('px', ''), 10) || 0;
     const rightMargin = parseInt(computedStyle.marginRight.replace('px', ''), 10) || 0;
-    console.log(gap,rightMargin)
-
-    const translateX = -currentIndex * (itemWidth + gap + rightMargin); // margin-right:20px, gap: 15px
+    // margin-right:20px, gap: 15px
+    const translateX = -currentIndex * (itemWidth + gap + rightMargin);
     element.querySelector('.carousel-list').style.transform = `translateX(${translateX}px)`;
 
     prevButton.disabled = currentIndex <= 0;
@@ -41,14 +40,14 @@ function decorateCarousel(element) {
 
   prevButton.addEventListener('click', () => {
     if (currentIndex > 0) {
-      currentIndex--;
+      currentIndex -= 1;
       updateCarousel();
     }
   });
 
   nextButton.addEventListener('click', () => {
     if (currentIndex < carouselItems.length - 1) {
-      currentIndex++;
+      currentIndex += 1;
       updateCarousel();
     }
   });
@@ -58,10 +57,10 @@ function decorateCarousel(element) {
 
 export default async function decorate(block) {
   console.log(block);
-  [...block.querySelectorAll(':scope > div')].forEach(row => {
+  [...block.querySelectorAll(':scope > div')].forEach((row) => {
     [...row.querySelectorAll(':scope > div')].forEach((col, i) => {
       if (col.classList.contains('button-container')) {
-        col.className = ""
+        col.className = '';
       }
 
       if (col.querySelector('a.button')) {
@@ -69,44 +68,39 @@ export default async function decorate(block) {
       }
 
       col.className = `utility-banner-col-${i}`;
-    })
-  })
+    });
+  });
 
   const img = block.querySelector('.utility-banner .utility-banner-col-0 img');
-  
   console.log(img);
-    img.addEventListener('mouseover', () => {
-      img.src = '/icons/location-lighter.svg';
-    });
-    img.addEventListener('mouseout', () => {
-      img.src = '/icons/location-white.svg';
-    });
+  img.addEventListener('mouseover', () => {
+    img.src = '/icons/location-lighter.svg';
+  });
+  img.addEventListener('mouseout', () => {
+    img.src = '/icons/location-white.svg';
+  });
 
-    const account_linkEl = block.querySelector('.utility-banner-col-2 ul');
-  account_linkEl?.classList.add('hidden');
+  const accountLinkEl = block.querySelector('.utility-banner-col-2 ul');
+  accountLinkEl?.classList.add('hidden');
   const accountEl = block.querySelector('.utility-banner-col-2 a');
-  
   // Show the dropdown when hovering over the account link
   accountEl.addEventListener('mouseover', () => {
-    account_linkEl.classList.remove('hidden');
+    accountLinkEl.classList.remove('hidden');
   });
-  
   // Hide the dropdown only if the mouse leaves both the account link and the dropdown
   accountEl.addEventListener('mouseout', (event) => {
-    if (!account_linkEl.contains(event.relatedTarget)) {
-      account_linkEl.classList.add('hidden');
+    if (!accountLinkEl.contains(event.relatedTarget)) {
+      accountLinkEl.classList.add('hidden');
     }
   });
-  
   // Keep the dropdown visible when hovering over it
-  account_linkEl.addEventListener('mouseover', () => {
-    account_linkEl.classList.remove('hidden');
+  accountLinkEl.addEventListener('mouseover', () => {
+    accountLinkEl.classList.remove('hidden');
   });
-  
   // Hide the dropdown when the mouse leaves the dropdown and does not return to the account link
-  account_linkEl.addEventListener('mouseout', (event) => {
+  accountLinkEl.addEventListener('mouseout', (event) => {
     if (!accountEl.contains(event.relatedTarget)) {
-      account_linkEl.classList.add('hidden');
+      accountLinkEl.classList.add('hidden');
     }
   });
 

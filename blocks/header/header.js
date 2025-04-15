@@ -148,7 +148,6 @@ export default async function decorate(block) {
   }
 
   // utility-banner for mobile.
-  
 
   // hamburger for mobile
   const hamburger = document.createElement('div');
