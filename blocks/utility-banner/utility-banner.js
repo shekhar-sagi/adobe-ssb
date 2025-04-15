@@ -57,55 +57,60 @@ function decorateCarousel(element) {
 
 export default async function decorate(block) {
   console.log(block);
-  [...block.querySelectorAll(':scope > div')].forEach((row) => {
-    [...row.querySelectorAll(':scope > div')].forEach((col, i) => {
+
+  // Process rows and columns
+  block.querySelectorAll(':scope > div').forEach((row) => {
+    row.querySelectorAll(':scope > div').forEach((col, i) => {
       if (col.classList.contains('button-container')) {
         col.className = '';
       }
 
-      if (col.querySelector('a.button')) {
-        col.querySelector('a.button').removeAttribute('class');
+      const button = col.querySelector('a.button');
+      if (button) {
+        button.removeAttribute('class');
       }
 
       col.className = `utility-banner-col-${i}`;
     });
   });
 
-  const img = block.querySelector('.utility-banner .utility-banner-col-0 img');
-  console.log(img);
-  img.addEventListener('mouseover', () => {
-    img.src = '/icons/location-lighter.svg';
-  });
-  img.addEventListener('mouseout', () => {
-    img.src = '/icons/location-white.svg';
-  });
+  // Handle image hover effect
+  const img = block.querySelector('.utility-banner.space-around .utility-banner-col-0 img');
+  if (img) {
+    img.addEventListener('mouseover', () => {
+      img.src = '/icons/location-lighter.svg';
+    });
+    img.addEventListener('mouseout', () => {
+      img.src = '/icons/location-white.svg';
+    });
+  }
 
-  const accountLinkEl = block.querySelector('.utility-banner-col-2 ul');
-  accountLinkEl?.classList.add('hidden');
-  const accountEl = block.querySelector('.utility-banner-col-2 a');
-  // Show the dropdown when hovering over the account link
-  accountEl.addEventListener('mouseover', () => {
-    accountLinkEl.classList.remove('hidden');
-  });
-  // Hide the dropdown only if the mouse leaves both the account link and the dropdown
-  accountEl.addEventListener('mouseout', (event) => {
-    if (!accountLinkEl.contains(event.relatedTarget)) {
-      accountLinkEl.classList.add('hidden');
-    }
-  });
-  // Keep the dropdown visible when hovering over it
-  accountLinkEl.addEventListener('mouseover', () => {
-    accountLinkEl.classList.remove('hidden');
-  });
-  // Hide the dropdown when the mouse leaves the dropdown and does not return to the account link
-  accountLinkEl.addEventListener('mouseout', (event) => {
-    if (!accountEl.contains(event.relatedTarget)) {
-      accountLinkEl.classList.add('hidden');
-    }
-  });
+  // Handle account dropdown
+  const accountLinkEl = block.querySelector('.utility-banner.space-around .utility-banner-col-2 ul');
+  const accountEl = block.querySelector('.utility-banner.space-around .utility-banner-col-2 a');
+  if (accountLinkEl && accountEl) {
+    accountLinkEl.classList.add('hidden');
 
-  if (block.classList.contains('carousel')) {
+    const toggleDropdown = (show) => {
+      accountLinkEl.classList.toggle('hidden', !show);
+    };
+
+    accountEl.addEventListener('mouseover', () => toggleDropdown(true));
+    accountEl.addEventListener('mouseout', (event) => {
+      if (!accountLinkEl.contains(event.relatedTarget)) toggleDropdown(false);
+    });
+
+    accountLinkEl.addEventListener('mouseover', () => toggleDropdown(true));
+    accountLinkEl.addEventListener('mouseout', (event) => {
+      if (!accountEl.contains(event.relatedTarget)) toggleDropdown(false);
+    });
+  }
+
+  // Initialize carousel if applicable
+  if (block.classList.contains('arrow-carousel')) {
     const carouselList = block.querySelector('.utility-banner-col-1');
-    decorateCarousel(carouselList);
+    if (carouselList) {
+      decorateCarousel(carouselList);
+    }
   }
 }
