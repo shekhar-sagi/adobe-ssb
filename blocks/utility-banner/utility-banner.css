@@ -1,0 +1,194 @@
+@import url('../../styles/beautyrest.css');
+
+.utility-banner > div{
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    position: relative;
+  }
+
+  .utility-banner ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .utility-banner-col-0,
+  .utility-banner-col-2 {
+    margin: 0 20px;
+  }
+
+  .utility-banner-col-0 a{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .utility-banner-col-1 ul {
+    flex-direction: row;
+  }
+
+  .utility-banner-col-2 ul {
+    flex-direction: column;
+  }
+  
+  .utility-banner-col-1 li {
+    padding: 0 10px;
+  }
+  
+  .utility-banner-col-0 p,
+  .utility-banner-col-2 p {
+    margin: 0;
+  }
+  
+  .utility-banner a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Carousel styling */
+  .utility-banner .carousel {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: max-content;
+  }
+  
+  .utility-banner .carousel-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .utility-banner .carousel-item {
+    min-width: calc(100% - 12px);
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000;
+    color: #fff;
+    border: none;
+    margin:0;
+    cursor: pointer;
+  }
+
+  .carousel-button.prev {
+    left: 0;
+    padding: 0;
+  }
+
+  .carousel-button.next {
+    right: 0;
+    padding: 0;
+  }
+
+  .carousel-button:hover,
+  .carousel-button:focus,
+  .carousel-button:active {
+    background-color: transparent;
+  }
+
+  .utility-banner .carousel-button:disabled {
+    opacity: 0;
+  }
+
+  button.carousel-button img {
+    width: 24px;
+  }
+
+  .utility-banner .utility-banner-col-0,
+  .utility-banner .utility-banner-col-2 {
+    display: none;
+  }
+
+  .utility-banner .carousel-item > a{
+    font-size: 12px;
+    text-decoration: underline;
+  }
+
+  .utility-banner .utility-banner-col-2 p > a {
+    position: absolute;
+    right: 0;
+    padding-bottom: 25px;
+  }
+
+  .utility-banner .utility-banner-col-2 li a{
+    color: var(--brand-btn-color);
+    font-weight: 600;
+  }
+
+  .utility-banner .utility-banner-col-0 a:hover,
+  .utility-banner .utility-banner-col-2 a:hover {
+    color: var(--light-brand-color);
+  }
+
+  .utility-banner .utility-banner-col-2 {
+    p{
+      position: relative;
+      width: 100px;
+      padding-bottom: 20px;
+    }
+
+    ul.hidden{
+      display: none;
+    }
+
+    li.hidden{
+      display: none;
+    }
+
+    li a:hover{
+      color: black;
+    }
+  } 
+
+  
+
+  /* Account drop down styling */
+  .utility-banner .utility-banner-col-2 ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background-color: var(--lighter-brand-color);
+    border-top: 5px solid var(--brand-btn-color);
+    padding: 20px; 
+  }
+
+  @media (width >= 1024px){
+    .utility-banner .utility-banner-col-0,
+    .utility-banner .utility-banner-col-2 {
+      display: block;
+    }
+
+    .utility-banner .carousel {
+      width: 600px;
+      margin: 0 20px;
+    }
+
+    .utility-banner .carousel-item {
+      min-width: 600px;
+      flex-direction: row;
+    }
+  }

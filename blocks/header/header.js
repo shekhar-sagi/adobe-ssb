@@ -119,6 +119,7 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
+  // const classes = ['banner','brand', 'sections', 'tools'];
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
@@ -146,6 +147,8 @@ export default async function decorate(block) {
     });
   }
 
+  // utility-banner for mobile.
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
@@ -163,4 +166,7 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  // const utility_banner = block.querySelector('.utility-banner-container');
+  // block.prepend(utility_banner);
+  // block.prepend(block.querySelector('.nav-banner'));
 }
