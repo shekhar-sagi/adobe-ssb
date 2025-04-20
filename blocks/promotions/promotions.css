@@ -1,0 +1,57 @@
+.promotions {
+  background-color: var(--dark-grey-color);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promotions .promotion-item {
+  font-family: var(--body-font-family);
+  color: var(--light-color);
+  font-size: var(--body-font-size-s);
+  font-weight: normal; /* Changed font weight to regular for promotion text */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.promotions .promotion-link {
+  color: azure; /* Link text color is azure */
+  font-size: var(--body-font-size-s);
+  font-weight: normal; /* Changed font weight to regular for shop now text */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center; /* Aligns arrow inline with text */
+}
+
+/* Ensure promotion item and link are inline */
+.promotions .promotion-item,
+.promotions .promotion-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.promotions .promotion-link:hover {
+  color: var(--link-hover-color);
+}
+
+/* Styling for the inline arrow */
+.promotions .promotion-arrow {
+  margin-left: 4px; /* Reduced margin for inline positioning */
+  color: turquoise; /* Arrow color is turquoise */
+  font-size: var(--body-font-size-s);
+}
+
+@media (max-width: 768px) {
+  .promotions {
+    padding: 12px;
+  }
+
+  .promotions .promotion-item {
+    font-size: var(--body-font-size-xs);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
